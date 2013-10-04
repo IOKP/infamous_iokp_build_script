@@ -5,17 +5,12 @@ cd ~/android/aokp_jb
 echo "Done"
 echo "Initialize the AOKP repo and download the manifest"
 sleep 2
-repo init -u https://github.com/AOKP/platform_manifest.git -b jb-mr1
+repo init -u https://github.com/AOKP/platform_manifest.git -b jb-mr2 -g all,kernel,device,vendor
 echo "Done"
 echo "Sync AOKP source"
 echo "Sit and wait for a long time. Nearing 10GB of source code now."
 sleep 5
 repo sync
-echo "Done"
-echo "Download the kernel source"
-echo "Sit and wait for a long time again."
-sleep 5
-. ./platform_manifest/manual_add_kernel_manifest.sh
 echo "Done"
 echo "Start the build"
 echo "This is probably the EASIEST part of all, simply copy/paste this command and walk away!"
