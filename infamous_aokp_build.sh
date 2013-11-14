@@ -1,20 +1,17 @@
-echo "Making AOKP dir"
+echo "Repo Sync all IOKP's devices"
+echo "Making IOKP dir"
 sleep 2
-mkdir -p ~/android/aokp_jb
-cd ~/android/aokp_jb
+mkdir -p ~/android/iokp
+cd ~/android/iokp
 echo "Done"
 echo "Initialize the AOKP repo and download the manifest"
 sleep 2
-<<<<<<< HEAD
-repo init -u https://github.com/AOKP/platform_manifest.git -b jb-mr2 -g all,kernel,device,vendor
-=======
-repo init -u https://github.com/AOKP/platform_manifest.git -b jb-mr2
->>>>>>> 43c2589a8f8a3cd89b2ed7d6da2d652d39e6e43c
+repo init -u https://github.com/IOKP/platform_manifest.git -b jb-mr2 -g all,kernel,device,vendor
 echo "Done"
-echo "Sync AOKP source"
+echo "Sync IOKP source"
 echo "Sit and wait for a long time. Nearing 10GB of source code now."
 sleep 5
-repo sync
+repo sync -j16
 echo "Done"
 echo "Start the build"
 echo "This is probably the EASIEST part of all, simply copy/paste this command and walk away!"
